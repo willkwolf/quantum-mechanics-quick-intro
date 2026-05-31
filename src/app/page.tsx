@@ -343,7 +343,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               1900: La Física Creía Haber Ganado
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 max-w-3xl">
               <p>
                 A finales del siglo XIX, las leyes fundamentales de la naturaleza parecían grabadas en piedra. La mecánica impecable de <strong>Newton</strong> gobernaba el movimiento; las elegantes ecuaciones de <strong>Maxwell</strong> describían la luz; y la termodinámica estadística de <strong>Boltzmann</strong> organizaba el calor.
               </p>
@@ -408,7 +408,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               ¿Qué es un Cuerpo Negro?
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4 mb-6">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 mb-6 max-w-3xl">
               <p>
                 Un <strong>Cuerpo Negro</strong> es un objeto idealizado que absorbe absolutamente toda la radiación electromagnética que incide sobre él. No refleja luz; es una trampa electromagnética perfecta.
               </p>
@@ -427,11 +427,7 @@ export default function QuantumOriginsPage() {
                 <span className="text-white font-bold">{tempS1} K</span>
               </div>
               <input 
-                type="range"
-                min="300"
-                max="7000"
-                step="100"
-                value={tempS1}
+                type="range" aria-label="Temperatura de la cavidad del cuerpo negro" min="300" max="7000" step="100" value={tempS1}
                 onChange={(e) => setTempS1(parseInt(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-classical"
               />
@@ -506,7 +502,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               El Espectrómetro y la Ley de Wien
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4 mb-6">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 mb-6 max-w-3xl">
               <p>
                 Al pasar la luz del cuerpo negro por un prisma, vemos cómo se distribuye la intensidad de energía para cada color (frecuencia). Sorprendentemente, a temperaturas ordinarias, casi toda la luz es infrarroja (calor invisible).
               </p>
@@ -525,11 +521,7 @@ export default function QuantumOriginsPage() {
                 <span className="text-white font-bold">{tempS3} K</span>
               </div>
               <input 
-                type="range"
-                min="1000"
-                max="6500"
-                step="100"
-                value={tempS3}
+                type="range" aria-label="Temperatura para la ley espectral de Wien" min="1000" max="6500" step="100" value={tempS3}
                 onChange={(e) => setTempS3(parseInt(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-classical"
               />
@@ -626,7 +618,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               Rayleigh-Jeans y la Catástrofe Ultravioleta
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 max-w-3xl">
               <p>
                 Lord Rayleigh y Sir James Jeans aplicaron rigurosamente la física clásica. Supusieron que la radiación son ondas estacionarias que rebotan en la cavidad y que, por la termodinámica, cada modo recibe exactamente la misma cantidad de energía promedio en equilibrio térmico: <strong className="text-accent-classical"><MathEq formula="k_B T" /></strong>.
               </p>
@@ -726,7 +718,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               Planck Rompe las Reglas
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4 mb-6">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 mb-6 max-w-3xl">
               <p>
                 En diciembre de 1900, Max Planck propuso un "acto de desesperación" matemático. Postuló que los osciladores atómicos de la cavidad no pueden emitir ni absorber energía de forma continua. La energía térmica se intercambia en <strong>paquetes discretos</strong> llamados cuántos.
               </p>
@@ -747,11 +739,7 @@ export default function QuantumOriginsPage() {
                 </span>
               </div>
               <input 
-                type="range"
-                min="0"
-                max="1.5"
-                step="0.1"
-                value={hValS6}
+                type="range" aria-label="Constante de acción de Planck para la cuantización" min="0" max="1.5" step="0.1" value={hValS6}
                 onChange={(e) => setHValS6(parseFloat(e.target.value))}
                 className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-quantum"
               />
@@ -898,7 +886,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               La Solución Perfecta (La Ley de Planck)
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 max-w-3xl">
               <p>
                 Planck dedujo su distribución espectral y encajó <strong>perfectamente</strong> con los datos experimentales reales. A bajas frecuencias, la ley de Planck se reduce de forma natural al límite de Rayleigh-Jeans clásico; a altas frecuencias, coincide perfectamente con la ley espectral aproximada de Wien.
               </p>
@@ -1002,7 +990,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               Einstein Toma la Idea en Serio
             </h2>
-            <div className="text-sm md:text-base text-text-muted leading-relaxed flex flex-col gap-4 mb-6">
+            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 mb-6 max-w-3xl">
               <p>
                 Planck consideraba su teoría de cuantos de energía simplemente como un "truco matemático" conveniente. Pero en 1905, Albert Einstein fue mucho más allá. Postuló que <strong>la luz misma está físicamente cuantizada en fotones discretos</strong>.
               </p>
@@ -1022,11 +1010,7 @@ export default function QuantumOriginsPage() {
                   <span className="text-white font-bold">{lightFreq} THz</span>
                 </div>
                 <input 
-                  type="range"
-                  min="350"
-                  max="950"
-                  step="25"
-                  value={lightFreq}
+                  type="range" aria-label="Frecuencia de la luz incidente" min="350" max="950" step="25" value={lightFreq}
                   onChange={(e) => setLightFreq(parseInt(e.target.value))}
                   className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-quantum"
                 />
@@ -1038,11 +1022,7 @@ export default function QuantumOriginsPage() {
                   <span className="text-white font-bold">{lightIntensity} %</span>
                 </div>
                 <input 
-                  type="range"
-                  min="10"
-                  max="100"
-                  step="5"
-                  value={lightIntensity}
+                  type="range" aria-label="Intensidad de la luz incidente" min="10" max="100" step="5" value={lightIntensity}
                   onChange={(e) => setLightIntensity(parseInt(e.target.value))}
                   className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-quantum"
                 />
@@ -1176,7 +1156,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               El Dominó Cuántico (1900–1927)
             </h2>
-            <p className="text-sm md:text-base text-text-muted leading-relaxed">
+            <p className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed max-w-3xl">
               La constante cuántica fundamental descubierta por Max Planck para explicar el color del cuerpo negro desató una avalancha conceptual imparable en cascada.
             </p>
           </div>
@@ -1261,7 +1241,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               Lo Que Realmente Cambió
             </h2>
-            <p className="text-sm md:text-base text-text-muted leading-relaxed">
+            <p className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed max-w-3xl">
               La transición cuántica iniciada por el color del cuerpo negro destruyó por completo los pilares fundamentales del pensamiento clásico occidental.
             </p>
           </div>
@@ -1319,7 +1299,7 @@ export default function QuantumOriginsPage() {
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
               Advanced Quantum Sandbox
             </h2>
-            <p className="text-sm md:text-base text-text-muted leading-relaxed">
+            <p className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed max-w-3xl">
               Juega y experimenta libremente con las constantes físicas. Observa de forma interactiva y científica en tiempo real cómo las tres grandes leyes de radiación compiten y colapsan clásicamente.
             </p>
           </div>
@@ -1341,11 +1321,7 @@ export default function QuantumOriginsPage() {
                   <span className="text-white font-semibold">{sandboxTemp} K</span>
                 </div>
                 <input 
-                  type="range"
-                  min="800"
-                  max="6500"
-                  step="100"
-                  value={sandboxTemp}
+                  type="range" aria-label="Temperatura del cuerpo negro en el Sandbox" min="800" max="6500" step="100" value={sandboxTemp}
                   onChange={(e) => setSandboxTemp(parseInt(e.target.value))}
                   className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-classical"
                 />
@@ -1358,11 +1334,7 @@ export default function QuantumOriginsPage() {
                   <span className="text-white font-semibold">{sandboxH.toFixed(2)}x</span>
                 </div>
                 <input 
-                  type="range"
-                  min="0.0"
-                  max="2.0"
-                  step="0.05"
-                  value={sandboxH}
+                  type="range" aria-label="Constante de Planck en el Sandbox" min="0.0" max="2.0" step="0.05" value={sandboxH}
                   onChange={(e) => setSandboxH(parseFloat(e.target.value))}
                   className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-quantum"
                 />

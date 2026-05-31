@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { BookOpen, X, Sparkles, HelpCircle } from 'lucide-react';
 import Math from './Math';
+import AcademicText from './AcademicText';
 
 interface CompanionSection {
   title: string;
@@ -216,9 +217,7 @@ export default function LandauCompanion({ activeSection }: LandauCompanionProps)
           <span className="absolute -top-3 left-2 text-4xl text-accent-quantum/20 font-serif leading-none select-none">
             “
           </span>
-          <p className="text-xs italic leading-relaxed text-text-muted font-serif">
-            {data.quote}
-          </p>
+          <AcademicText className="text-xs italic leading-relaxed text-text-muted font-serif block" text={data.quote} />
           <span className="block text-[10px] font-mono text-right text-accent-quantum/50 mt-1.5 uppercase tracking-wider">
             — L. Landau & E. Lifshitz
           </span>
@@ -229,9 +228,7 @@ export default function LandauCompanion({ activeSection }: LandauCompanionProps)
           <h3 className="text-xs font-mono uppercase tracking-widest text-text-muted font-bold">
             Análisis Académico
           </h3>
-          <p className="text-xs leading-relaxed text-text-muted text-justify">
-            {data.explanation}
-          </p>
+          <AcademicText className="text-xs leading-relaxed text-text-muted text-justify block" text={data.explanation} />
         </div>
 
         {/* Math Comparison */}
@@ -278,9 +275,7 @@ export default function LandauCompanion({ activeSection }: LandauCompanionProps)
             <span className="text-[10px] font-mono uppercase tracking-wider text-accent-quantum font-bold">
               Nota Teórica
             </span>
-            <p className="text-[11px] leading-relaxed text-text-muted">
-              {data.annotation}
-            </p>
+            <AcademicText className="text-[11px] leading-relaxed text-text-muted block" text={data.annotation} />
           </div>
         </div>
       </div>

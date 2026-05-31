@@ -9,7 +9,7 @@
   --border-hover: rgba(255, 255, 255, 0.16);
   
   --text-primary: #f3f4f6;
-  --text-muted: #9ca3af;
+  --text-muted: #d1d5db; /* Optimized contrast: WCAG AA compliant */
   
   --accent-classical: #f59e0b; /* Amber/Gold */
   --accent-quantum: #06b6d4;     /* Cyan */
@@ -41,6 +41,14 @@ body {
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) var(--bg);
+}
+
+/* Custom focus ring for keyboard accessibility */
+button:focus-visible, 
+input[type="range"]:focus-visible, 
+a:focus-visible {
+  outline: 2px solid var(--accent-quantum);
+  outline-offset: 4px;
 }
 
 /* Custom dark scrollbar for Webkit */
