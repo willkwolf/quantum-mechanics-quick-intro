@@ -594,9 +594,9 @@ export default function QuantumOriginsPage() {
                 {/* Display mathematical Wien law overlay */}
                 <div className="absolute top-3 right-3 px-3 py-1 rounded bg-black/50 border border-white/5 text-[10px] font-mono select-none">
                   {notation === 'landau' ? (
-                    <MathEq formula="\\omega_{max} \\propto T" />
+                    <MathEq formula="\omega_{max} \propto T" />
                   ) : (
-                    <MathEq formula="\\lambda_{max} T = \\text{const}" />
+                    <MathEq formula="\lambda_{max} T = \text{const}" />
                   )}
                 </div>
               </div>
@@ -689,9 +689,9 @@ export default function QuantumOriginsPage() {
                 {/* Formula display */}
                 <div className="absolute top-3 right-3 px-3 py-1 rounded bg-accent-danger/10 border border-accent-danger/20 text-[10px] font-mono text-accent-danger">
                   {notation === 'landau' ? (
-                    <MathEq formula="dE_\\omega \\propto \\omega^2 T \\, d\\omega" />
+                    <MathEq formula="dE_\omega \propto \omega^2 T \, d\omega" />
                   ) : (
-                    <MathEq formula="u(\\nu, T) = \\frac{8\\pi\\nu^2}{c^3} k_B T" />
+                    <MathEq formula="u(\nu, T) = \frac{8\pi\nu^2}{c^3} k_B T" />
                   )}
                 </div>
               </div>
@@ -723,7 +723,7 @@ export default function QuantumOriginsPage() {
                 En diciembre de 1900, Max Planck propuso un "acto de desesperación" matemático. Postuló que los osciladores atómicos de la cavidad no pueden emitir ni absorber energía de forma continua. La energía térmica se intercambia en <strong>paquetes discretos</strong> llamados cuántos.
               </p>
               <p>
-                Imagina una rampa (física clásica): puedes detenerte a cualquier altura/energía continua. Ahora imagina unos escalones (física cuántica): sólo puedes estar en el escalón 1, 2, 3... nunca a mitad de camino. La altura del escalón es directamente proporcional a la frecuencia de oscilación por una constante fundamental: <strong className="text-accent-quantum"><MathEq formula="E = n h \nu" /></strong> (o <MathEq formula="E = n \\hbar \\omega" />).
+                Imagina una rampa (física clásica): puedes detenerte a cualquier altura/energía continua. Ahora imagina unos escalones (física cuántica): sólo puedes estar en el escalón 1, 2, 3... nunca a mitad de camino. La altura del escalón es directamente proporcional a la frecuencia de oscilación por una constante fundamental: <strong className="text-accent-quantum"><MathEq formula="E = n h \nu" /></strong> (o <MathEq formula="E = n \hbar \omega" />).
               </p>
             </div>
 
@@ -812,9 +812,9 @@ export default function QuantumOriginsPage() {
                 <span>Energía Cuantizada:</span>
                 <span className="text-accent-quantum font-bold">
                   {notation === 'landau' ? (
-                    <MathEq formula="E = n \\hbar \\omega" />
+                    <MathEq formula="E = n \hbar \omega" />
                   ) : (
-                    <MathEq formula="E = n h \\nu" />
+                    <MathEq formula="E = n h \nu" />
                   )}
                 </span>
               </div>
@@ -851,9 +851,9 @@ export default function QuantumOriginsPage() {
 
               <div className="text-2xl md:text-4xl font-mono text-white font-bold select-all mb-4">
                 {notation === 'landau' ? (
-                  <MathEq formula="1.054571817 \\times 10^{-34} \\text{ J}\\cdot\\text{s}" />
+                  <MathEq formula="1.054571817 \times 10^{-34} \text{ J}\cdot\text{s}" />
                 ) : (
-                  <MathEq formula="6.62607015 \\times 10^{-34} \\text{ J}\\cdot\\text{s}" />
+                  <MathEq formula="6.62607015 \times 10^{-34} \text{ J}\cdot\text{s}" />
                 )}
               </div>
 
@@ -966,9 +966,9 @@ export default function QuantumOriginsPage() {
                 </span>
                 <div className="py-1 text-center">
                   {notation === 'landau' ? (
-                    <MathEq formula="dE_\\omega = V \\frac{\\hbar \\omega^3}{\\pi^2 c^3} \\frac{d\\omega}{e^{\\hbar\\omega/T} - 1}" block />
+                    <MathEq formula="dE_\omega = V \frac{\hbar \omega^3}{\pi^2 c^3} \frac{d\omega}{e^{\hbar\omega/T} - 1}" block />
                   ) : (
-                    <MathEq formula="u(\\nu,T) = \\frac{8\\pi h\\nu^3}{c^3} \\frac{1}{e^{h\\nu/k_BT} - 1}" block />
+                    <MathEq formula="u(\nu,T) = \frac{8\pi h\nu^3}{c^3} \frac{1}{e^{h\nu/k_BT} - 1}" block />
                   )}
                 </div>
               </div>
@@ -998,7 +998,7 @@ export default function QuantumOriginsPage() {
                 La prueba definitiva fue el <strong>Efecto Fotoeléctrico</strong>. Al iluminar un metal, la luz expulsa electrones de su superficie. Clásicamente, una luz roja intensa continua debería arrancar electrones lentamente. Sin embargo, en la realidad, la luz roja nunca arranca nada. Pero una tenue luz ultravioleta arranca electrones instantáneamente.
               </p>
               <p>
-                ¿Por qué? Cada fotón choca como una partícula indivisible contra un electrón. Si la energía de un solo fotón (<MathEq formula="E = \\hbar\\omega" />) es menor que el trabajo de salida (<MathEq formula="W" />) del metal, el electrón nunca podrá escapar.
+                ¿Por qué? Cada fotón choca como una partícula indivisible contra un electrón. Si la energía de un solo fotón (<MathEq formula="E = \hbar\omega" />) es menor que el trabajo de salida (<MathEq formula="W" />) del metal, el electrón nunca podrá escapar.
               </p>
             </div>
 
@@ -1132,9 +1132,9 @@ export default function QuantumOriginsPage() {
                 </span>
                 <div className="py-1 text-center">
                   {notation === 'landau' ? (
-                    <MathEq formula="E_k = \\hbar\\omega - W" block />
+                    <MathEq formula="E_k = \hbar\omega - W" block />
                   ) : (
-                    <MathEq formula="E_k = h\\nu - W" block />
+                    <MathEq formula="E_k = h\nu - W" block />
                   )}
                 </div>
               </div>
@@ -1220,7 +1220,7 @@ export default function QuantumOriginsPage() {
                 <span className="text-[10px] font-mono text-text-muted mt-0.5">Ecuación de Onda</span>
               </div>
               <p className="text-[11px] leading-relaxed text-text-muted mt-1.5">
-                Plantea su ecuación fundamental de onda, reconciliando la física cuántica con ecuaciones diferenciales continuas de la función de onda (<MathEq formula="\\Psi" />).
+                Plantea su ecuación fundamental de onda, reconciliando la física cuántica con ecuaciones diferenciales continuas de la función de onda (<MathEq formula="\Psi" />).
               </p>
             </div>
 
@@ -1256,7 +1256,7 @@ export default function QuantumOriginsPage() {
               </div>
               <h3 className="text-lg font-semibold text-white">Continuidad vs. Discreción</h3>
               <p className="text-xs leading-relaxed text-text-muted">
-                La física clásica describe un universo suave, infinitamente subdividible. La física cuántica impone un límite fundamental: la naturaleza avanza a saltos de cuantos discretos atómicos indivisibles definidos por la constante <MathEq formula="\\hbar" />.
+                La física clásica describe un universo suave, infinitamente subdividible. La física cuántica impone un límite fundamental: la naturaleza avanza a saltos de cuantos discretos atómicos indivisibles definidos por la constante <MathEq formula="\hbar" />.
               </p>
             </div>
 
@@ -1459,9 +1459,9 @@ export default function QuantumOriginsPage() {
                 <div className="absolute top-4 right-4 bg-black/60 border border-white/5 rounded-xl p-3 text-[10px] font-mono max-w-xs flex flex-col gap-1.5">
                   <span className="text-[8.5px] text-accent-quantum font-bold uppercase tracking-wider">Límite Cuántico de Bose (μ = 0)</span>
                   {notation === 'landau' ? (
-                    <MathEq formula="dE_\\omega = V \\frac{\\hbar \\omega^3}{\\pi^2 c^3} \\frac{d\\omega}{e^{\\hbar\\omega/T} - 1}" block />
+                    <MathEq formula="dE_\omega = V \frac{\hbar \omega^3}{\pi^2 c^3} \frac{d\omega}{e^{\hbar\omega/T} - 1}" block />
                   ) : (
-                    <MathEq formula="u(\\nu, T) = \\frac{8\\pi h \\nu^3}{c^3} \\frac{1}{e^{h\\nu/k_B T} - 1}" block />
+                    <MathEq formula="u(\nu, T) = \frac{8\pi h \nu^3}{c^3} \frac{1}{e^{h\nu/k_B T} - 1}" block />
                   )}
                   {sandboxH === 0 && (
                     <span className="text-accent-danger text-[9px] mt-1 font-bold animate-pulse">

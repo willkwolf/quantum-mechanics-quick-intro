@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { NotationProvider } from "@/context/NotationContext";
+import 'katex/dist/katex.min.css';
 import "./globals.css";
 
 const inter = Inter({
