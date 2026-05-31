@@ -5,6 +5,7 @@ import { useNotation } from '@/context/NotationContext';
 import MathToggle from '@/components/MathToggle';
 import LandauCompanion from '@/components/LandauCompanion';
 import MathEq from '@/components/Math';
+import ClassicalDerivation from '@/components/ClassicalDerivation';
 import { 
   ArrowDown, 
   Atom, 
@@ -608,101 +609,109 @@ export default function QuantumOriginsPage() {
             SECTION 4 & 5: RAYLEIGH-JEANS & THE CATASTROPHE
            ======================================================== */}
         <section 
-          className="min-h-screen flex flex-col lg:flex-row items-center gap-12 py-24"
+          className="min-h-screen flex flex-col gap-12 py-24"
           data-section-id="4"
         >
-          <div className="flex-1 max-w-xl">
-            <span className="text-xs font-mono uppercase tracking-widest text-accent-danger font-semibold block mb-2">
-              Sección 03-04 // La Ruptura Clásica
-            </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
-              Rayleigh-Jeans y la Catástrofe Ultravioleta
-            </h2>
-            <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 max-w-3xl">
-              <p>
-                Lord Rayleigh y Sir James Jeans aplicaron rigurosamente la física clásica. Supusieron que la radiación son ondas estacionarias que rebotan en la cavidad y que, por la termodinámica, cada modo recibe exactamente la misma cantidad de energía promedio en equilibrio térmico: <strong className="text-accent-classical"><MathEq formula="k_B T" /></strong>.
-              </p>
-              <p className="text-accent-danger font-semibold">
-                ¡Aquí reside el desastre absoluto!
-              </p>
-              <p>
-                Hay infinitamente más modos de oscilar a altas frecuencias (longitudes de onda muy cortas, como el ultravioleta) que a bajas frecuencias. Si cada modo recibe energía clásica continua, la densidad espectral diverge hacia el infinito. Al hacer scroll, observa cómo la física clásica hace explotar la realidad térmica en la zona ultravioleta.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 flex justify-center items-center w-full">
-            {/* Cavity resonator & infinite explosion indicator */}
-            <div className="w-full max-w-[420px] glass rounded-2xl border-accent-danger/20 bg-accent-danger/3 p-6 flex flex-col gap-4 shadow-[0_0_40px_rgba(239,68,68,0.05)] relative overflow-hidden">
-              
-              {/* Catastrophe Indicator warning banner if active */}
-              <div className="absolute inset-0 bg-accent-danger/5 backdrop-blur-[1px] pointer-events-none animate-pulse" />
-
-              <div className="flex justify-between items-center border-b border-accent-danger/10 pb-3">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-accent-danger font-semibold flex items-center gap-1.5 animate-pulse">
-                  <AlertTriangle className="w-4 h-4 text-accent-danger" />
-                  Alerta: Catástrofe Ultravioleta Clásica
-                </span>
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="flex-1 max-w-xl">
+              <span className="text-xs font-mono uppercase tracking-widest text-accent-danger font-semibold block mb-2">
+                Sección 03-04 // La Ruptura Clásica
+              </span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wide text-white mb-6">
+                Rayleigh-Jeans y la Catástrofe Ultravioleta
+              </h2>
+              <div className="text-sm md:text-base lg:text-[17px] text-text-muted leading-relaxed flex flex-col gap-4 max-w-3xl">
+                <p>
+                  Lord Rayleigh y Sir James Jeans aplicaron rigurosamente la física clásica. Supusieron que la radiación son ondas estacionarias que rebotan en la cavidad y que, por la termodinámica, cada modo recibe exactamente la misma cantidad de energía promedio en equilibrio térmico: <strong className="text-accent-classical"><MathEq formula="k_B T" /></strong>.
+                </p>
+                <p className="text-accent-danger font-semibold">
+                  ¡Aquí reside el desastre absoluto!
+                </p>
+                <p>
+                  Hay infinitamente más modos de oscilar a altas frecuencias (longitudes de onda muy cortas, como el ultravioleta) que a bajas frecuencias. Si cada modo recibe energía clásica continua, la densidad espectral diverge hacia el infinito. Al hacer scroll, observa cómo la física clásica hace explotar la realidad térmica en la zona ultravioleta y dedúcelo paso a paso a continuación.
+                </p>
               </div>
+            </div>
 
-              {/* Dynamic plotting exploding curve */}
-              <div className="w-full aspect-[4/3] bg-black/60 border border-accent-danger/10 rounded-xl p-2 relative overflow-hidden">
-                <svg className="w-full h-full" viewBox="0 0 400 200">
-                  {/* Axis */}
-                  <line x1="40" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-                  <line x1="40" y1="20" x2="40" y2="160" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+            <div className="flex-1 flex justify-center items-center w-full">
+              {/* Cavity resonator & infinite explosion indicator */}
+              <div className="w-full max-w-[420px] glass rounded-2xl border-accent-danger/20 bg-accent-danger/3 p-6 flex flex-col gap-4 shadow-[0_0_40px_rgba(239,68,68,0.05)] relative overflow-hidden">
+                
+                {/* Catastrophe Indicator warning banner if active */}
+                <div className="absolute inset-0 bg-accent-danger/5 backdrop-blur-[1px] pointer-events-none animate-pulse" />
 
-                  {/* Draw classical Rayleigh-Jeans curve */}
-                  {(() => {
-                    const rjPoints = getRayleighCurvePoints(4000); 
-                    const pPoints = getPlanckCurvePoints(4000, 1);
-                    const rjPath = `M ${rjPoints.map(p => `${p.x + 40},${p.y}`).join(' L ')}`;
-                    const pPath = `M ${pPoints.map(p => `${p.x + 40},${p.y}`).join(' L ')}`;
+                <div className="flex justify-between items-center border-b border-accent-danger/10 pb-3">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-accent-danger font-semibold flex items-center gap-1.5 animate-pulse">
+                    <AlertTriangle className="w-4 h-4 text-accent-danger" />
+                    Alerta: Catástrofe Ultravioleta Clásica
+                  </span>
+                </div>
 
-                    return (
-                      <>
-                        {/* Real/Planck spectrum (shaded correctly) */}
-                        <path d={`${pPath} L 390,160 L 40,160 Z`} fill="rgba(6,182,212,0.05)" />
-                        <path d={pPath} fill="none" stroke="rgba(6,182,212,0.4)" strokeWidth="1.5" strokeDasharray="3,3" />
+                {/* Dynamic plotting exploding curve */}
+                <div className="w-full aspect-[4/3] bg-black/60 border border-accent-danger/10 rounded-xl p-2 relative overflow-hidden">
+                  <svg className="w-full h-full" viewBox="0 0 400 200">
+                    {/* Axis */}
+                    <line x1="40" y1="160" x2="380" y2="160" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+                    <line x1="40" y1="20" x2="40" y2="160" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
 
-                        {/* Classical Rayleigh Curve going to infinity */}
-                        <path d={rjPath} fill="none" stroke="#ef4444" strokeWidth="3" className="animate-pulse" />
-                        
-                        {/* Infinity symbol at UV area */}
-                        <text x="350" y="35" fill="#ef4444" fontSize="18" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
-                          ∞
-                        </text>
-                        <line x1="320" y1="160" x2="320" y2="25" stroke="rgba(239,68,68,0.2)" strokeWidth="1" strokeDasharray="2,2" />
-                      </>
-                    );
-                  })()}
-                  
-                  {/* Axis titles */}
-                  <text x="380" y="175" fill="rgba(255,255,255,0.4)" fontSize="9" textAnchor="end" fontFamily="monospace">
-                    UV (Frecuencia)
-                  </text>
-                  <text x="35" y="25" fill="#ef4444" fontSize="9" textAnchor="end" fontWeight="bold" fontFamily="monospace" transform="rotate(-90 35 25)">
-                    Divergencia (Energía)
-                  </text>
-                </svg>
+                    {/* Draw classical Rayleigh-Jeans curve */}
+                    {(() => {
+                      const rjPoints = getRayleighCurvePoints(4000); 
+                      const pPoints = getPlanckCurvePoints(4000, 1);
+                      const rjPath = `M ${rjPoints.map(p => `${p.x + 40},${p.y}`).join(' L ')}`;
+                      const pPath = `M ${pPoints.map(p => `${p.x + 40},${p.y}`).join(' L ')}`;
 
-                {/* Formula display */}
-                <div className="absolute top-3 right-3 px-3 py-1 rounded bg-accent-danger/10 border border-accent-danger/20 text-[10px] font-mono text-accent-danger">
-                  {notation === 'landau' ? (
-                    <MathEq formula="dE_\omega \propto \omega^2 T \, d\omega" />
-                  ) : (
-                    <MathEq formula="u(\nu, T) = \frac{8\pi\nu^2}{c^3} k_B T" />
-                  )}
+                      return (
+                        <>
+                          {/* Real/Planck spectrum (shaded correctly) */}
+                          <path d={`${pPath} L 390,160 L 40,160 Z`} fill="rgba(6,182,212,0.05)" />
+                          <path d={pPath} fill="none" stroke="rgba(6,182,212,0.4)" strokeWidth="1.5" strokeDasharray="3,3" />
+
+                          {/* Classical Rayleigh Curve going to infinity */}
+                          <path d={rjPath} fill="none" stroke="#ef4444" strokeWidth="3" className="animate-pulse" />
+                          
+                          {/* Infinity symbol at UV area */}
+                          <text x="350" y="35" fill="#ef4444" fontSize="18" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
+                            ∞
+                          </text>
+                          <line x1="320" y1="160" x2="320" y2="25" stroke="rgba(239,68,68,0.2)" strokeWidth="1" strokeDasharray="2,2" />
+                        </>
+                      );
+                    })()}
+                    
+                    {/* Axis titles */}
+                    <text x="380" y="175" fill="rgba(255,255,255,0.4)" fontSize="9" textAnchor="end" fontFamily="monospace">
+                      UV (Frecuencia)
+                    </text>
+                    <text x="35" y="25" fill="#ef4444" fontSize="9" textAnchor="end" fontWeight="bold" fontFamily="monospace" transform="rotate(-90 35 25)">
+                      Divergencia (Energía)
+                    </text>
+                  </svg>
+
+                  {/* Formula display */}
+                  <div className="absolute top-3 right-3 px-3 py-1 rounded bg-accent-danger/10 border border-accent-danger/20 text-[10px] font-mono text-accent-danger">
+                    {notation === 'landau' ? (
+                      <MathEq formula="dE_\omega \propto \omega^2 T \, d\omega" />
+                    ) : (
+                      <MathEq formula="u(\nu, T) = \frac{8\pi\nu^2}{c^3} k_B T" />
+                    )}
+                  </div>
+                </div>
+
+                {/* Rigorous disaster warning text */}
+                <div className="text-[11px] font-mono text-text-muted leading-relaxed">
+                  Según las leyes clásicas de Newton y Maxwell, la energía irradiada por segundo en el ultravioleta y rayos X es infinita. El universo colapsaría en un resplandor cegador. Este absurdo forzó el fin de la física clásica.
                 </div>
               </div>
-
-              {/* Rigorous disaster warning text */}
-              <div className="text-[11px] font-mono text-text-muted leading-relaxed">
-                Según las leyes clásicas de Newton y Maxwell, la energía irradiada por segundo en el ultravioleta y rayos X es infinita. El universo colapsaría en un resplandor cegador. Este absurdo forzó el fin de la física clásica.
-              </div>
             </div>
           </div>
+
+          {/* New Step-by-Step Derivation Module */}
+          <div className="w-full mt-6">
+            <ClassicalDerivation />
+          </div>
         </section>
+
 
         {/* ========================================================
             SECTION 6: PLANCK BREAKS THE RULES
